@@ -9,6 +9,8 @@
   | 
   | 
  */ 
+
+ try {
     $user = 'root';
     $pass = '';
 
@@ -24,4 +26,9 @@
     $info_web = $row_web->fetch(PDO::FETCH_OBJ);
 
     error_reporting(0);
+ } catch (\Throwable $th) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+ }
+    
 ?>
